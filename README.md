@@ -264,12 +264,12 @@ Los identificadores pueden contener letras, dígitos y `_`, pero deben comenzar 
 
 ### Características específicas
 
-| Elemento          | Implementación |    |
-| ----------------- | -------------- | -- |
-| Comentarios       | `/* ... */`    |    |
-| Cadenas           | `"..."`        |    |
-| Operador especial | `              | =` |
-| Case sensitive    | Sí             |    |
+| Elemento          | Implementación |     |
+| ----------------- | -------------- | --- |
+| Comentarios       | `/* ... */`    |     |
+| Cadenas           | `"..."`        |     |
+| Operador especial | `\|=`          |`\|=`|
+| Case sensitive    | Sí             |     |
 
 ---
 
