@@ -1,0 +1,16 @@
+let float balance;
+let float deposit;
+let float fee;
+let string owner;
+
+owner = "Juan";
+balance = 30.8;
+deposit = 15.2;
+fee = 0.3;
+
+balance = balance + deposit - fee;
+echo owner, balance;
+
+if (balance == 348.25) {
+    echo "correct balance";
+}

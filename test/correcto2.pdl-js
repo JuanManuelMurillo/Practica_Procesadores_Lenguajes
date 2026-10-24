@@ -1,0 +1,24 @@
+let int score;
+let int passed;
+let int attempts;
+let float average;
+let string student;
+
+/* Name of the student */
+student = "Juan";
+score = 85;
+attempts = 0;
+average = 78;
+passed = 0;
+
+function boolean check(int value) {
+    return value == 50;
+}
+
+while (!passed) {
+    attempts = attempts + 1;
+    passed |= check(score);
+    score = score + 5;
+}
+
+echo student, attempts;

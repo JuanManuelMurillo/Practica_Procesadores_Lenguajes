@@ -1,0 +1,6 @@
+let int limit;
+let int big;
+limit = 32767;
+big = 32768;
+big = 100000;
+echo "limit:", limit;

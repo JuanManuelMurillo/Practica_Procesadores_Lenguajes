@@ -1,0 +1,7 @@
+let int a;
+let int b;
+a = 5 * 3;
+b = a / 2;
+if (a < b) {
+    return b;
+}
