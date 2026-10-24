@@ -1,0 +1,6 @@
+let float a;
+let float b;
+let float c;
+a = 1.2.3;
+b = 9.;
+c = .55;
