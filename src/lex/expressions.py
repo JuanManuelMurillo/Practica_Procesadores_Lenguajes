@@ -83,20 +83,31 @@ def t_comma(t):
 def t_realnum(t):
     r'\d+\.\d+'
 
-    value = float(t.value)
+    integer_digits, decimal_digits = t.value.split('.')
 
-    if value > 117549436.0:
+    value = 0
+    for digit in integer_digits:
+        value = value * 10 + int(digit)
+
+    divisor = 1
+    for digit in decimal_digits:
+        value = value * 10 + int(digit)
+        divisor = divisor * 10
+
+    if value > 117549436 * divisor:
         error_manager.report(REAL_OUT_OF_RANGE, t.value, t.lineno)
         return None
 
-    t.value = value
+    t.value = value / divisor
     return t
 
 
 def t_integer(t):
     r'\d+'
 
-    value = int(t.value)
+    value = 0
+    for digit in t.value:
+        value = value * 10 + int(digit)
 
     if value > 32767:
         error_manager.report(INTEGER_OUT_OF_RANGE, t.value, t.lineno)
