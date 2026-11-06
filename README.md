@@ -202,7 +202,7 @@ Este fichero, junto con la gramática utilizada por el procesador, podrá utiliz
 Fichero que contiene un volcado legible de las Tablas de Símbolos utilizadas durante el análisis semántico.
 
 ```text
-tabla_simbolos.txt
+symbol_table.txt
 ```
 
 Debe incluirse la información de las tablas globales y locales.

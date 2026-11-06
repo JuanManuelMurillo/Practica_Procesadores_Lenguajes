@@ -5,13 +5,14 @@ lex       := ∅
 car       := ∅
 num_linea := 1
 long_cad  := 0
+valor     := 0
+divisor   := 1
 
 ## Funciones
 Leer() : Leer el siguiente carácter
 Conc() : Concatenar el carácter actual
 Ini() : Inicializar el lexema
-Parse_Int(lex) : Modificar el tipo del lexema a número entero
-Parse_Real(lex) : Modificar el tipo del lexema a número real
+Dig(car) : Devolver el valor numérico del dígito actual
 Gen_T(token, atributo) : Generar el token
 Error(mensaje, numero_linea, lexema) : Registrar el error en el gestor de errores
 NL : Incrementar el número de línea
@@ -33,6 +34,7 @@ Leer()
 ```text
 Ini()
 Conc()
+valor := Dig(car)
 Leer()
 ```
 
@@ -40,14 +42,13 @@ Leer()
 
 ```text
 Conc()
+valor := valor * 10 + Dig(car)
 Leer()
 ```
 
 **1 : 100**
 
 ```text
-valor := Parse_Int(lex)
-
 Si valor <= 32767:
     Gen_T(integer, valor)
 Si no:
@@ -61,6 +62,7 @@ Si no:
 
 ```text
 Conc()
+divisor := 1
 Leer()
 ```
 
@@ -68,6 +70,8 @@ Leer()
 
 ```text
 Conc()
+valor := valor * 10 + Dig(car)
+divisor := divisor * 10
 Leer()
 ```
 
@@ -75,16 +79,16 @@ Leer()
 
 ```text
 Conc()
+valor := valor * 10 + Dig(car)
+divisor := divisor * 10
 Leer()
 ```
 
 **3 : 101**
 
 ```text
-valor := Parse_Real(lex)
-
-Si valor <= 117549436.0:
-    Gen_T(realnum, valor)
+Si valor <= 117549436 * divisor:
+    Gen_T(realnum, valor / divisor)
 Si no:
     Error("Constante real fuera de rango máximo (117549436.0)", num_linea, lex)
 
@@ -114,7 +118,12 @@ Si TPR(lex):
     Gen_T(TPR(lex), -)
 Si no:
     posTS := TS(lex)
-    Gen_T(id, posTS)
+    Si posTS != null: 
+        Gen_T(id, posTS)
+    Si no:
+        posTS := InsertarTS(lex)
+        Gen_T(id, posTS)
+
 
 ```
 
@@ -195,7 +204,7 @@ Leer()
 Leer()
 ```
 
-**8 : 104**
+**8 : 0**
 
 ```text
 Leer()
