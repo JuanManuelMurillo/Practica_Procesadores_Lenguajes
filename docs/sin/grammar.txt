@@ -1,0 +1,55 @@
+Terminales = { let id ; if ( ) while { } int float bool str = logor echo prompt return , function void == + - ! integer realnum string lambda }
+NoTerminales = { P B M T S X L Q F F1 F2 F3 H A K C E R U V }
+//// Gramatica PdL-JS
+Axioma = P
+Producciones = {
+P -> B P
+P -> F P
+P -> lambda
+B -> let M id T ;
+B -> if ( E ) S
+B -> while ( E ) { C }
+B -> S
+M -> lambda
+T -> int
+T -> float
+T -> bool
+T -> str
+S -> id = E ;
+S -> id logor E ;
+S -> id ( L ) ;
+S -> echo E ;
+S -> prompt id ;
+S -> return X ;
+X -> E
+X -> lambda
+L -> E Q
+L -> lambda
+Q -> , E Q
+Q -> lambda
+F -> function F1 F2 { C }
+F1 -> lambda
+F2 -> F3 H ( A )
+F3 -> id
+H -> T
+H -> void
+A -> id T K
+A -> void
+K -> , id T K
+K -> lambda
+C -> B C
+C -> lambda
+E -> E == R
+E -> R
+R -> R + U
+R -> R - U
+R -> U
+U -> ! U
+U -> V
+V -> id
+V -> ( E )
+V -> id ( L )
+V -> integer
+V -> realnum
+V -> string
+}
