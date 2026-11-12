@@ -3,53 +3,53 @@ NoTerminales = { P B M T S X L Q F F1 F2 F3 H A K C E R U V }
 //// Gramatica PdL-JS
 Axioma = P
 Producciones = {
-P -> B P
-P -> F P
-P -> lambda
-B -> let M id T ;
-B -> if ( E ) S
-B -> while ( E ) { C }
-B -> S
-M -> lambda
-T -> int
-T -> float
-T -> bool
-T -> str
-S -> id = E ;
-S -> id logor E ;
-S -> id ( L ) ;
-S -> echo E ;
-S -> prompt id ;
-S -> return X ;
-X -> E
-X -> lambda
-L -> E Q
-L -> lambda
-Q -> , E Q
-Q -> lambda
-F -> function F1 F2 { C }
-F1 -> lambda
-F2 -> F3 H ( A )
-F3 -> id
-H -> T
-H -> void
-A -> id T K
-A -> void
-K -> , id T K
-K -> lambda
-C -> B C
-C -> lambda
-E -> E == R
-E -> R
-R -> R + U
-R -> R - U
-R -> U
-U -> ! U
-U -> V
-V -> id
-V -> ( E )
-V -> id ( L )
-V -> integer
-V -> realnum
-V -> string
+P -> B P                    //// 1
+P -> F P                    //// 2
+P -> lambda                 //// 3
+B -> let M id T ;           //// 4
+B -> if ( E ) S             //// 5
+B -> while ( E ) { C }      //// 6
+B -> S                      //// 7
+M -> lambda                 //// 8
+T -> int                    //// 9
+T -> float                  //// 10
+T -> bool                   //// 11
+T -> str                    //// 12
+S -> id = E ;               //// 13
+S -> id logor E ;           //// 14
+S -> id ( L ) ;             //// 15
+S -> echo E ;               //// 16
+S -> prompt id ;            //// 17
+S -> return X ;             //// 18
+X -> E                      //// 19
+X -> lambda                 //// 20
+L -> E Q                    //// 21
+L -> lambda                 //// 22
+Q -> , E Q                  //// 23
+Q -> lambda                 //// 24
+F -> function F1 F2 { C }   //// 25
+F1 -> lambda                //// 26
+F2 -> F3 H ( A )            //// 27
+F3 -> id                    //// 28
+H -> T                      //// 29
+H -> void                   //// 30
+A -> id T K                 //// 31
+A -> void                   //// 32
+K -> , id T K               //// 33
+K -> lambda                 //// 34
+C -> B C                    //// 35
+C -> lambda                 //// 36
+E -> E == R                 //// 37
+E -> R                      //// 38
+R -> R + U                  //// 39
+R -> R - U                  //// 40
+R -> U                      //// 41
+U -> ! U                    //// 42
+U -> V                      //// 43
+V -> id                     //// 44
+V -> ( E )                  //// 45
+V -> id ( L )               //// 46
+V -> integer                //// 47
+V -> realnum                //// 48
+V -> string                 //// 49
 }
