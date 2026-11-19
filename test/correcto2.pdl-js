@@ -1,24 +1,15 @@
-let int score;
-let int passed;
-let int attempts;
-let float average;
-let string student;
-
-/* Name of the student */
-student = "Juan";
-score = 85;
-attempts = 0;
-average = 78;
-passed = 0;
-
-function boolean check(int value) {
-    return value == 50;
+function suma int (x int, y int)
+{
+	return x + y;
 }
 
-while (!passed) {
-    attempts = attempts + 1;
-    passed |= check(score);
-    score = score + 5;
+function saluda void (void)
+{
+	echo "Hola";
+	return;
 }
 
-echo student, attempts;
+let total int;
+saluda();
+total = suma(1, suma(2, 3));
+echo total;

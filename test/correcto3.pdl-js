@@ -1,15 +1,17 @@
-function int total(int n) {
-    let int acc;
-    let int i;
-    acc = 0;
-    i = 1;
-    while (!(i == n + 1)) {
-        acc = acc + i;
-        i = i + 1;
-    }
-    return acc;
+let n int;
+let fin boolean;
+
+function cuenta int (k int)
+{
+	if (k == 0) return 0;
+	return 1 + cuenta(k - 1);
 }
 
-let int limit;
-prompt limit;
-echo "Result:", total(limit);
+n = 3;
+fin = n == 0;
+while (!fin)
+{
+	n = n - 1;
+	fin |= n == 0;
+}
+echo cuenta(5);

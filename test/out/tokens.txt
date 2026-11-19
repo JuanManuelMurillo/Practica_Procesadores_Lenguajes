@@ -1,0 +1,18 @@
+< let , >
+< id , 0 >
+< int , >
+< semc , >
+< id , 0 >
+< assig , >
+< integer , 1 >
+< semc , >
+< fun , >
+< id , 1 >
+< void , >
+< parenopen , >
+< void , >
+< parenclosed , >
+< curlopen , >
+< echo , >
+< id , 0 >
+< semc , >

@@ -223,3 +223,7 @@ __marimo__/
 
 # Graphify
 graphify-out/
+
+.DS_Store
+# VASt
+test/VisorArbStLinuxMac*/

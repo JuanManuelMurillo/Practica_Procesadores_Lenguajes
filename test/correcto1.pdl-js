@@ -1,16 +1,12 @@
-let float balance;
-let float deposit;
-let float fee;
-let string owner;
+let a int;
+let r float;
+let s string;
+let b boolean;
 
-owner = "Juan";
-balance = 30.8;
-deposit = 15.2;
-fee = 0.3;
-
-balance = balance + deposit - fee;
-echo owner, balance;
-
-if (balance == 348.25) {
-    echo "correct balance";
-}
+prompt a;
+r = 2.5;
+s = "Hola";
+b = !(a == 0);
+a = a + 1 - (2 + a);
+echo s;
+echo a == 3;

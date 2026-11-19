@@ -1,7 +1,4 @@
-let int a;
-let int b;
-a = 5 * 3;
-b = a / 2;
-if (a < b) {
-    return b;
-}
+/* Error: falta el parentesis de cierre en la linea 4 */
+let x int;
+x = 5;
+if (x == 5 echo x;
